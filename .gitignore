@@ -2,5 +2,3 @@ node_modules
 build
 dist
 .env
-database.json
-src/database.ts
