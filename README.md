@@ -7,7 +7,7 @@
 
 ## Getting Started
 
-- Clone the repository to your local machine: git clone https://github.com/.git
+- Clone the repository to your local machine: git clone https://github.com/mohaasrar/storefront-backend-api.git
 - Install dependencies: `npm install`
 - Set up the environment variables in a .env file
 - replace \*\*\* with the correct value to both on .env and database.json files
