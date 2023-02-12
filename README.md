@@ -24,7 +24,7 @@ SALT_ROUNDS=10
 TOKEN_SECRET=***
 ```
 
-- create database directory from db or using using `db-migrate db:drop sfdb`
+- create database with the same name defined on environment variables
 - migrate the database using `db-migrate up`
 
 ## Start the app
