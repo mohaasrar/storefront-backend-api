@@ -1,0 +1,20 @@
+  {
+
+
+    "dev": {
+      "driver": "pg",
+      "host": "127.0.0.1",
+      "database": "sfdb",
+      "user": "postgres",
+      "password": "Text1234"
+    },
+    "test": {
+      "driver": "pg",
+      "host": "127.0.0.1",
+      "database": "sfdbTest",
+      "user": "postgres",
+      "password": "Text1234"
+    }
+ 
+   
+  }
