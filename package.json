@@ -6,11 +6,12 @@
   "scripts": {
     "build": "npx tsc",
     "start": "nodemon src/server.ts",
+    "test": "cross-env ENV=test npm run dbmigrate-jasmine",
     "watch": "tsc-watch --esModuleInterop src/server.ts --outDir ./dist --onSuccess \"node ./dist/server.js\"",
-    "test": "npx tsc && db-migrate --env test up && jasmine",
+    "dbmigrate-jasmine": "db-migrate up -e test && npm run build && npm run jasmine && db-migrate reset -e test",
+    "jasmine": "jasmine",
     "lint": "eslint . --ext .ts",
     "prettier": "prettier --config .prettierrc 'src/**/*.ts' --write"
-    
   },
   "author": "Asrar Mohammed",
   "license": "ISC",
@@ -31,10 +32,12 @@
     "@types/pg": "^7.14.7",
     "@typescript-eslint/eslint-plugin": "^5.49.0",
     "@typescript-eslint/parser": "^5.49.0",
+    "cross-env": "^7.0.3",
     "eslint": "^8.32.0",
     "jasmine": "^3.6.4",
     "jasmine-spec-reporter": "^6.0.0",
     "jasmine-ts": "^0.3.0",
+    "nodemon": "^2.0.20",
     "prettier": "2.8.3",
     "supertest": "^6.3.3",
     "ts-node": "^10.9.1",
