@@ -94,11 +94,11 @@ const destroy = async (req: Request, res: Response) => {
 };
 
 const orderRoutes = (app: express.Application) => {
-  app.get("/orders", index);
-  app.get("/orders/complete/:userid", completordersbyuser);
-  app.get("/orders/current/:userid", currentordersbyuser);
-  app.get("/orders/:id", show);
-  app.post("/orders/:id/products", addProduct);
+  app.get("/orders", verifyToken, index);
+  app.get("/orders/complete/:userid", verifyToken, completordersbyuser);
+  app.get("/orders/current/:userid", verifyToken, currentordersbyuser);
+  app.get("/orders/:id", verifyToken, show);
+  app.post("/orders/:id/products", verifyToken, addProduct);
   app.post("/orders", verifyToken, create);
   app.delete("/orders/:id", verifyToken, destroy);
 };
