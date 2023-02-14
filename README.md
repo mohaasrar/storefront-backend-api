@@ -24,8 +24,21 @@ SALT_ROUNDS=10
 TOKEN_SECRET=***
 ```
 
-- create database with the same name defined on environment variables
+### Database Configuration
+
+```
+- start docker container using `docker-compose up` command
+- create database with the following sql command
+
+CREATE USER postgres WITH PASSWORD 'pass123';
+CREATE DATABASE sfdb;
+GRANT ALL PRIVILEGES ON DATABASE sfdb TO postgres;
+CREATE DATABASE sfdbTest;
+GRANT ALL PRIVILEGES ON DATABASE sfdbTest TO postgres;
+
 - migrate the database using `db-migrate up`
+
+```
 
 ## Start the app
 
