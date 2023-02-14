@@ -1,20 +1,16 @@
-  {
-
-
-    "dev": {
-      "driver": "pg",
-      "host": "127.0.0.1",
-      "database": "sfdb",
-      "user": "postgres",
-      "password": "Text1234"
-    },
-    "test": {
-      "driver": "pg",
-      "host": "127.0.0.1",
-      "database": "sfdbTest",
-      "user": "postgres",
-      "password": "Text1234"
-    }
- 
-   
+{
+  "dev": {
+    "driver": "pg",
+    "host": { "ENV": "POSTGRES_HOST" },
+    "database": { "ENV": "POSTGRES_DB" },
+    "user": { "ENV": "POSTGRES_USER" },
+    "password": { "ENV": "POSTGRES_PASSWORD" }
+  },
+  "test": {
+    "driver": "pg",
+    "host": { "ENV": "POSTGRES_HOST" },
+    "database": { "ENV": "POSTGRES_TEST_DB" },
+    "user": { "ENV": "POSTGRES_USER" },
+    "password": { "ENV": "POSTGRES_PASSWORD" }
   }
+}
