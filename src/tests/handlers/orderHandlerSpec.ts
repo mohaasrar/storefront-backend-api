@@ -50,15 +50,23 @@ describe("Order Routes", () => {
 
   describe("/GET", () => {
     it("should not return current order for the given user", async () => {
-      return await request.get("/orders/current/1").expect(200);
+      return await request
+        .get("/orders/current/1")
+        .set("Authorization", `Bearer ${token}`)
+        .expect(200);
     });
     it("should not return completed orders", async () => {
-      const res = await request.get("/orders/complete/1");
+      const res = await request
+        .get("/orders/complete/1")
+        .set("Authorization", `Bearer ${token}`);
       expect(res.status).toEqual(200);
     });
 
     it("should not return all orders when no taken given", async () => {
-      return await request.get("/orders").expect(200);
+      return await request
+        .get("/orders")
+        .set("Authorization", `Bearer ${token}`)
+        .expect(200);
     });
 
     it("should return a list of orders when token exist", async () => {
